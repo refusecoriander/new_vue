@@ -1,3 +1,3 @@
 <template>
-    <h1>去水印</h1>
+    <h1>去水印吧</h1>
 </template>
