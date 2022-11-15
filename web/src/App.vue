@@ -1,4 +1,5 @@
 <template>
+  <allmenu></allmenu>
   <RouterView />
 </template>
 
