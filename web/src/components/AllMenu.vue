@@ -9,7 +9,7 @@
       <el-menu-item style="padding:0px" @click="CloseDrawer" index="/navigation">
         <span slot="title">主页</span>
       </el-menu-item>
-      <el-menu-item style="padding:0px" @click="CloseDrawer" index="/watermark">
+      <el-menu-item style="padding:0px" @click="CloseDrawer" index="/xui">
         <span slot="title">X-UI面板</span>
       </el-menu-item>
       <el-menu-item style="padding:0px" @click="CloseDrawer" index="/baota">

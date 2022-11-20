@@ -1,7 +1,8 @@
 <template>
-  <router-view>
-          
-  </router-view>
+  <div class="home">
+    <router-view>
+    </router-view>
+  </div>
 </template>
 
 <script>
@@ -15,10 +16,14 @@ export default {
     }
   },
   methods: {
-    
+
   }
 }
 </script>
 
-<style scoped>
+<style>
+
+.home{
+  margin:0;
+}
 </style>
