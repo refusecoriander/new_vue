@@ -4,6 +4,7 @@ import Navigation from '@/views/Navigation.vue'
 import WaterMark from '@/views/WaterMark.vue'
 import Xui from '@/views/Xui.vue'
 import BaoTa from '@/views/BaoTa.vue'
+import Racknerd from '@/views/Racknerd.vue'
 
 const routes = [
     { path: '/', redirect:'/navigation'},
@@ -28,6 +29,11 @@ const routes = [
         path: '/home',
         component: Home,
         children: [{ path: '/baota', component: BaoTa}]
+      },
+      { 
+        path: '/home',
+        component: Home,
+        children: [{ path: '/racknerd', component: Racknerd}]
       },
 ]
 
