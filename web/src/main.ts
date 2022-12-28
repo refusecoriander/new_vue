@@ -7,11 +7,10 @@ import 'element-plus/dist/index.css'
 //导入全局组件
 import AllMenu from './global/index'
 
-// import axios from 'axios'
-// createApp.prototype.$http = axios.create({
-//     baseURL: process.env.VUE_APP_API_URL || '/web/api',
-// })
-
+import axios from 'axios'
+createApp(App).config.globalProperties.$http = axios.create({
+    baseURL: process.env.VUE_APP_API_URL || '/web/api',
+})
 
 createApp(App)
     .use(router)
