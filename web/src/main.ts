@@ -8,6 +8,7 @@ import 'element-plus/dist/index.css'
 import AllMenu from './global/index'
 
 import axios from 'axios'
+import VueAxios from 'vue-axios'
 createApp(App).config.globalProperties.$http = axios.create({
     baseURL: process.env.VUE_APP_API_URL || '/web/api',
 })
@@ -16,4 +17,5 @@ createApp(App)
     .use(router)
     .use(ElementPlus)
     .use(AllMenu)
+    .use(VueAxios,axios)
     .mount('#app')

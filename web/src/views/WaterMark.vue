@@ -1,8 +1,8 @@
 <template>
     <el-container class="container">
-        <el-main>
-            <el-row justify="center">
-                <el-col :span="22">
+        <el-main class="main">
+            <el-row>
+                <el-col :span="24">
                     <h1 style="color:#2597d8;text-shadow: 0.5px #35495e">短视频/图集在线去水印解析</h1>
                 </el-col>
             </el-row>
@@ -65,6 +65,8 @@
     </el-container>
 </template>
 <script>
+import { ElNotification } from 'element-plus' 
+
 export default {
     data() {
         return {
@@ -92,17 +94,19 @@ export default {
                         this.seen = true
                         this.info = res.data
                         this.loading = false
-                        this.$notify.success({
+                        ElNotification({
                             title: '解析成功',
-                            message: '请及时下载音视频',
+                            message: '请及时下载音视频', 
+                            type: 'success'
                         });
                     } else {
                         this.seen = false
                         this.loading = false
-                        this.$notify.error({
+                        ElNotification({
                             title: '解析失败',
-                            message: '视频不存在或接口失效'
-                        });
+                            message: '视频不存在或接口失效', 
+                            type: 'error'
+                        })
                     }
                 })
             } else {
@@ -112,17 +116,19 @@ export default {
                         this.iseen = true
                         this.loading = false
                         this.images_url = res.data.images
-                        this.$notify.success({
+                        ElNotification({
                             title: '解析成功',
-                            message: '图集暂不支持批量下载，请长按下载或右键另存为'
+                            message: '图集暂不支持批量下载，请长按下载或右键另存为', 
+                            type: 'success'
                         });
                     } else {
                         this.iseen = false
                         this.loading = false
-                        this.$notify.error({
+                        ElNotification({
                             title: '解析失败',
-                            message: '图集不存在或接口失效'
-                        });
+                            message: '图集不存在或接口失效', 
+                            type: 'error'
+                        })
                     }
                     console.log(this.images_url);
                 })
@@ -150,6 +156,16 @@ export default {
 </script>
   
 <style scoped>
+
+.main {
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
 .select {
     width: 5.5em;
 }
