@@ -1,7 +1,7 @@
 <template>
   <div class="allmenu">
     <el-affix position="top" :offset="200">
-      <el-button type="primary" :icon="Menu" @click="drawer = true" circle></el-button>
+      <el-button class="allmenubt" type="primary" :icon="Menu" @click="drawer = true"></el-button>
     </el-affix>
   </div>
   <el-drawer v-model="drawer" :direction="direction" :with-header="false">
@@ -45,7 +45,7 @@ const handleClose = (key: string, keyPath: string[]) => {
 </script>
 <style>
 .allmenu {
-  z-index: 9000;
+  z-index: 9999;
   position: fixed;
   /* 设置fixed固定定位 */
   bottom: 40px;
@@ -54,6 +54,10 @@ const handleClose = (key: string, keyPath: string[]) => {
   /* 距离浏览器窗口右边框20px */
 }
 
+.allmenubt {
+  height: 40px;
+  width: 40px;
+}
 .el-drawer.ltr {
   padding: 0;
   background: rgba(9, 9, 9, 0.397);
