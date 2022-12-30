@@ -16,7 +16,6 @@
                             <h4 style="color:#2597d8;margin:0.5em;text-shadow: 0.5px #35495e">在下面输入链接</h4>
                         </el-col>
                     </el-row>
-                    <!-- //123 -->
                     <el-row style="margin-bottom:1em">
                         <el-input v-model="value" placeholder="请在这里输入要生成的内容！" class="inputUrl">
                             <template #append>
@@ -38,7 +37,6 @@
                                 :cornersSquareOptions="cornersSquareOptions" :cornersDotOptions="cornersDotOptions" />
                         </div>
                     </el-row>
-
                 </el-tab-pane>
                 <el-tab-pane>
                     <template #label>
@@ -55,12 +53,13 @@
     </el-container>
 </template>
 
-<script>
-import { Calendar } from '@element-plus/icons-vue'
-import { Search } from '@element-plus/icons-vue'
+<script lang="ts">
+
 import { defineComponent, reactive, toRefs, nextTick } from "vue";
 import QRCodeVue3 from "qrcode-vue3";
 import image from "@/assets/logo.png";
+import { Calendar } from '@element-plus/icons-vue'
+import { Search } from '@element-plus/icons-vue'
 
 export default defineComponent({
     name: "viewQrcode",
@@ -72,7 +71,7 @@ export default defineComponent({
             //基础配置 https://qr-code-styling.com
             width: 340, // 二维码宽度
             height: 340, // 二维码高度
-            value: "https://mytools.refuseconriander.top", // 二维码内容
+            value: "https://mytools.refusecoriander.top", // 二维码内容
 
             margin: 6, // 二维码图像的外边距
 
@@ -228,6 +227,7 @@ export default defineComponent({
         border: 1px solid gray;
     }
 }
+
 body:before {
     top: 0;
     left: 0;
@@ -243,6 +243,7 @@ body:before {
     background-color: rgb(255, 255, 255);
     padding: 10px;
 }
+
 .el-container {
     height: 100%;
 }
