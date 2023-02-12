@@ -4279,6 +4279,11 @@
   optionalDependencies:
     "graceful-fs" "^4.1.6"
 
+"jsqr@^1.4.0":
+  "integrity" "sha512-dxLob7q65Xg2DvstYkRpkYtmKm2sPJ9oFhrhmudT1dZvNFFTlroai3AWSpLey/w5vMcLBXRgOJsbXpdN9HzU/A=="
+  "resolved" "https://registry.npmmirror.com/jsqr/-/jsqr-1.4.0.tgz"
+  "version" "1.4.0"
+
 "kind-of@^6.0.2":
   "integrity" "sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw=="
   "resolved" "https://registry.npmmirror.com/kind-of/-/kind-of-6.0.3.tgz"
@@ -5414,6 +5419,11 @@
     "@chenfengyuan/vue-qrcode" "^1.0.2"
     "qrcode-generator" "^1.4.3"
 
+"qrcode.vue@^3.3.3":
+  "integrity" "sha512-OsD4tQjIbxg/K6D5ZkWjBdYI9eg9K2i8qeYILdEAX5mdAydSAxV7xKmmZSP/hA12olLqEMZ9ryqDQrwa9jEMgw=="
+  "resolved" "https://registry.npmmirror.com/qrcode.vue/-/qrcode.vue-3.3.3.tgz"
+  "version" "3.3.3"
+
 "qrcode@^1.4.4":
   "integrity" "sha512-nS8NJ1Z3md8uTjKtP+SGGhfqmTCs5flU/xR623oI0JX+Wepz9R8UrRVCTBTJm3qGw3rH6jJ6MUHjkDx15cxSSg=="
   "resolved" "https://registry.npmjs.org/qrcode/-/qrcode-1.5.1.tgz"
@@ -6495,6 +6505,13 @@
   dependencies:
     "@vue/compiler-sfc" "2.7.14"
     "csstype" "^3.1.0"
+
+"vue3-qr-reader@^1.0.0":
+  "integrity" "sha512-BRgmR+lDPkNwgL6skSaEOGFg4Aup/FLYnOGFCV0knYHxfbAnliJN/+wr//iqD2G3EOBrXw4TPGNfj/5Wxl7wwQ=="
+  "resolved" "https://registry.npmmirror.com/vue3-qr-reader/-/vue3-qr-reader-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "jsqr" "^1.4.0"
 
 "watchpack@^2.4.0":
   "integrity" "sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg=="
