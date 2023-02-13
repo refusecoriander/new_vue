@@ -9,17 +9,17 @@
             <h1 style="margin-bottom: 2em; color:#35495e">拒绝香菜的小工具箱</h1>
           </el-col>
         </el-row>
-        <el-row>
-          <el-col :span="24">
+        <el-row style="margin-left: 0;margin-right: 0;" :gutter="20">
+          <el-col :xs="24" :sm="12" :md="6">
             <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick1" plain>刘明野工具集</el-button>
           </el-col>
-          <el-col style="margin-top:20px" :span="24">
+          <el-col :xs="24" :sm="12" :md="6">
             <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick2" plain>去水印</el-button>
           </el-col>
-          <el-col style="margin-top:20px" :span="24">
+          <el-col :xs="24" :sm="12" :md="6">
             <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick3" plain>推特视频下载</el-button>
           </el-col>
-          <el-col style="margin-top:20px" :span="24">
+          <el-col :xs="24" :sm="12" :md="6">
             <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick4" plain>二维码生成识别</el-button>
           </el-col>
         </el-row>
@@ -70,9 +70,11 @@
     height: 100%;
     width: 100%;
   }
-  .el-col{
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .el-row {
+    width: 100%;
+  }
+  .el-col {
+    padding-bottom: 10px;
   }
   .Mytools {
     font-size: 4rem;
@@ -83,9 +85,9 @@
   }
   .ToolBt{
     font-size: 1em;
-    left:1em;
-    right:1em;
-    padding: 1em;
+    left:0em;
+    right:0em;
+    padding: 0em;
     width: 100%;
     height: 7em;
     /* color: #26ac6f; */
