@@ -83,16 +83,20 @@ export default {
     },
     methods: {
         onSubmit() {
+            this.seen = false
+            this.iseen = false
             this.loading = true
-            const url = /http[s]?:\/\/[\w.]+[\w/]*[\w.]*\??[\w=&:\-+%]*[/]*/.exec(this.input)
+            const url = /(https?|http):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/.exec(this.input)
+            //const url = /http[s]?:\/\/[\w.]+[\w/]*[\w.]*\??[\w=&:\-+%]*[/]*/.exec(this.input)
             if (this.select == '1' || this.select == '') {
-                this.axios.get('https://tenapi.cn/video/?url=' + url).then((res) => {
-                    if (res.data.url != null) {
-                        if (res.data.music != null) {
+                this.axios.get('https://tenapi.cn/v2/video?url=' + encodeURIComponent(url[0])).then((res) => {
+                //this.axios.get('https://tenapi.cn/v2/video/?url=' + url).then((res) => {
+                    if (res.data.code == 200) {
+                        if (res.data.data.music != null) {
                             this.music = true
                         }
                         this.seen = true
-                        this.info = res.data
+                        this.info = res.data.data
                         this.loading = false
                         ElNotification({
                             title: '解析成功',
@@ -111,11 +115,12 @@ export default {
                 })
             } else {
                 this.seen = false
-                this.axios.get('https://tenapi.cn/images/?url=' + url).then((res) => {
+                this.axios.get('https://tenapi.cn/v2/images?url=' + encodeURIComponent(url[0])).then((res) => {
+                //this.axios.get('https://tenapi.cn/v2/images/?url=' + url).then((res) => {
                     if (res.data.code == 200) {
                         this.iseen = true
                         this.loading = false
-                        this.images_url = res.data.images
+                        this.images_url = res.data.data.images
                         ElNotification({
                             title: '解析成功',
                             message: '图集暂不支持批量下载，请长按下载或右键另存为', 
