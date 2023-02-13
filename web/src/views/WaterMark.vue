@@ -29,7 +29,7 @@
                     </div>
                 </el-col>
             </el-row>
-            <el-row style="margin-top:10px;" :gutter="4">
+            <el-row style="margin-top:10px; margin-bottom: 10px;" :gutter="4">
                 <el-col :span="6">
                     <el-popover width="25em" placement="bottom" trigger="click">
                         <template #reference>
@@ -146,7 +146,7 @@ export default {
             document.getElementById('Iframe1').src = document.getElementById('Iframe1').src = this.info.url;
         },
         sendmusicsrc(downsrcs) {
-            document.getElementById('Iframe1').src = document.getElementById('Iframe1').src = this.info.music;
+            document.getElementById('Iframe1').src = document.getElementById('Iframe1').src = this.info.music.url;
         },
     },
     mounted() {
@@ -155,7 +155,7 @@ export default {
         const deviceWidth = document.documentElement.clientWidth;
         const deviceHeight = document.documentElement.clientHeight;
         oIframe.style.width = (Number(deviceWidth) - 26) + 'px'; //数字是页面布局宽度差值
-        oIframe.style.height = (Number(deviceHeight) - 170) + 'px'; //数字是页面布局高度差
+        oIframe.style.height = (Number(deviceHeight) - 180) + 'px'; //数字是页面布局高度差
     },
 }
 </script>
