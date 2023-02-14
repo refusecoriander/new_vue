@@ -7,6 +7,7 @@ import BaoTa from '@/views/BaoTa.vue'
 import Racknerd from '@/views/Racknerd.vue'
 import TwitterDown from '@/views/TwitterDown.vue'
 import QRcode from '@/views/QRcode.vue'
+import HotTrends from '@/views/HotTrends.vue'
 
 const routes = [
   { path: '/', redirect: '/navigation' },
@@ -46,6 +47,11 @@ const routes = [
     path: '/home',
     component: Home,
     children: [{ path: '/qrcode', component: QRcode }]
+  },
+  {
+    path: '/home',
+    component: Home,
+    children: [{ path: '/hottrends', component: HotTrends }]
   },
 ]
 

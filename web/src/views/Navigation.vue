@@ -22,6 +22,9 @@
           <el-col :xs="24" :sm="12" :md="6">
             <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick4" plain>二维码生成识别</el-button>
           </el-col>
+          <el-col :xs="24" :sm="12" :md="6">
+            <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick5" plain>热点趋势</el-button>
+          </el-col>
         </el-row>
       </el-main>
     </el-container>
@@ -51,6 +54,9 @@
       },
       cimsInputClick4() {
         this.$router.push({ path: '/qrcode' })
+      },
+      cimsInputClick5() {
+        this.$router.push({ path: '/hottrends' })
       }
     }
   }
