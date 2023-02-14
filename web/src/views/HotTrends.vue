@@ -1,6 +1,6 @@
 <template>
     <el-tabs v-model="activeName" type="border-card" class="demo-tabs">
-        <el-tab-pane label="知乎" name="zhihu" @tab-click="handleClick">
+        <el-tab-pane label="知乎" name="zhihu">
             <el-table :data="zhihuinfo" stripe style="width: 100%" :show-header="false">
                 <el-table-column type="index" width="50" align="center" />
                 <el-table-column prop="name" label="榜单" min-width="68%" align="left">
@@ -137,7 +137,11 @@ export default {
     },
     created() {
         this.getZhihuInfo();
-        // this.getWeiboInfo();
+        this.getWeiboInfo();
+        this.getBaiduInfo();
+        this.getDouyinInfo();
+        this.getBiliInfo();
+        this.getToutiaoInfo();
     },
 
     watch: {

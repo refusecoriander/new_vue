@@ -11,7 +11,7 @@
         </el-row>
         <el-row style="margin-left: 0;margin-right: 0;" :gutter="20">
           <el-col :xs="24" :sm="12" :md="6">
-            <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick1" plain>刘明野工具集</el-button>
+            <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick5" plain>热点趋势</el-button>
           </el-col>
           <el-col :xs="24" :sm="12" :md="6">
             <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick2" plain>去水印</el-button>
@@ -23,7 +23,7 @@
             <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick4" plain>二维码生成识别</el-button>
           </el-col>
           <el-col :xs="24" :sm="12" :md="6">
-            <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick5" plain>热点趋势</el-button>
+            <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick1" plain>刘明野工具集</el-button>
           </el-col>
         </el-row>
       </el-main>
