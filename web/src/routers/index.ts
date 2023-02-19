@@ -10,49 +10,20 @@ import QRcode from '@/views/QRcode.vue'
 import HotTrends from '@/views/HotTrends.vue'
 
 const routes = [
-  { path: '/', redirect: '/navigation' },
-  // { path: '/dicom', component: Dicom},
   {
-    path: '/home',
+    path: '/',
     component: Home,
-    redirect: '/navigation',
-    children: [{ path: '/navigation', component: Navigation }]
-  },
-  {
-    path: '/home',
-    component: Home,
-    children: [{ path: '/watermark', component: WaterMark }]
-  },
-  {
-    path: '/home',
-    component: Home,
-    children: [{ path: '/xui', component: Xui }]
-  },
-  {
-    path: '/home',
-    component: Home,
-    children: [{ path: '/baota', component: BaoTa }]
-  },
-  {
-    path: '/home',
-    component: Home,
-    children: [{ path: '/racknerd', component: Racknerd }]
-  },
-  {
-    path: '/home',
-    component: Home,
-    children: [{ path: '/twitterdown', component: TwitterDown }]
-  },
-  {
-    path: '/home',
-    component: Home,
-    children: [{ path: '/qrcode', component: QRcode }]
-  },
-  {
-    path: '/home',
-    component: Home,
-    children: [{ path: '/hottrends', component: HotTrends }]
-  },
+    children: [
+      { path: '/', name: 'navigation',component: Navigation},
+      { path: '/watermark', name: 'watermark',component: WaterMark},
+      { path: '/xui', name: 'xui',component: Xui},
+      { path: '/baota', name: 'baota',component: BaoTa},
+      { path: '/racknerd', name: 'racknerd',component: Racknerd},
+      { path: '/twitterdown', name: 'twitterdown',component: TwitterDown},
+      { path: '/qrcode', name: 'qrcode',component: QRcode},
+      { path: '/hottrends', name: 'hottrends',component: HotTrends},
+    ]
+  }
 ]
 
 const router = createRouter({

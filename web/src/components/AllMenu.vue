@@ -6,7 +6,7 @@
   </div>
   <el-drawer v-model="drawer" :direction="direction" :with-header="false">
     <el-menu :router="true" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
-      <el-menu-item style="padding:0px" @click="CloseDrawer" index="/navigation">
+      <el-menu-item style="padding:0px" @click="CloseDrawer" index="/">
         <span slot="title">主页</span>
       </el-menu-item>
       <el-menu-item style="padding:0px" @click="CloseDrawer" index="/xui">
