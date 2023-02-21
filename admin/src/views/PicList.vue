@@ -1,12 +1,17 @@
 <template>
     <div>
-        <h1>用户列表</h1>
+        <h1>图片列表</h1>
         <el-table :data="items">
-            <el-table-column prop="_id" label="用户ID" width="240"></el-table-column>
-            <el-table-column prop="name" label="用户名"></el-table-column>
+            <el-table-column prop="_id" label="图片ID" width="220"></el-table-column>
+            <el-table-column prop="pic" label="图片" padding-top="0">
+                <template v-slot="scope" >
+                    <img :src="scope.row.pic" style="height:3rem;padding-top:0px;padding-bottom:0px" />
+                </template>
+            </el-table-column>
+            <el-table-column prop="name" label="图片名"></el-table-column>
             <el-table-column fixed="right" label="操作" width="180">
                 <template v-slot="scope">
-                    <el-button type="primary" size="small" @click="$router.push(`/users/edit/${scope.row._id}`)">编辑</el-button>
+                    <el-button type="primary" size="small" @click="$router.push(`/pics/edit/${scope.row._id}`)">编辑</el-button>
                     <el-button type="danger" size="small" @click="remove(scope.row)">删除</el-button>
                 </template>
             </el-table-column>
@@ -22,8 +27,9 @@ export default {
         }
     },
     methods: {
+
         async fetch() {
-            const res = await this.$http.get('rest/users')
+            const res = await this.$http.get('rest/pics')
             this.items = res.data
         },
         async remove(row) {
@@ -37,7 +43,7 @@ export default {
                 }
             )
                 .then(async() => {
-                    const res = this.$http.delete(`rest/users/${row._id}`)
+                    const res = this.$http.delete(`rest/pics/${row._id}`)
                     ElMessage({
                         type: 'success',
                         message: '删除成功',

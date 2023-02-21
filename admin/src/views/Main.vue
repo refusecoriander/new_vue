@@ -2,20 +2,30 @@
   <el-container class="layout-container-demo" style="height: 100vh;">
     <el-main>
       <el-menu mode="horizontal" class=" el-menu-demo" background-color="#545c64" text-color="#fff"
-        active-text-color="#ffd04b" @select="handleSelect" router unique-opened :default-active="$route.path">
+        active-text-color="#ffd04b" router unique-opened :default-opends="['1']" :default-active="$route.path">
         <!-- <el-menu-item index="1">后台主页</el-menu-item> -->
         <el-sub-menu index="1">
-          <template #title>
-            用户管理
-          </template>
+          <template #title>管理员</template>
+          <el-menu-item-group>
+            <el-menu-item index="/admin_users/list">管理员列表</el-menu-item>
+            <el-menu-item index="/admin_users/creat">添加管理员</el-menu-item>
+          </el-menu-item-group>
+        </el-sub-menu>
+        <el-sub-menu index="2">
+          <template #title>用户管理</template>
           <el-menu-item-group>
             <el-menu-item index="/users/list">用户列表</el-menu-item>
             <el-menu-item index="/users/creat">添加用户</el-menu-item>
           </el-menu-item-group>
+        </el-sub-menu>
+        <el-sub-menu index="3">
+          <template #title>图片管理</template>
           <el-menu-item-group>
-            <el-menu-item index="3">添加管理员</el-menu-item>
+            <el-menu-item index="/pics/list">图片列表</el-menu-item>
+            <el-menu-item index="/pics/creat">上传图片</el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
+
       </el-menu>
       <router-view :key="$route.path"></router-view>
     </el-main>
@@ -56,6 +66,6 @@
 }
 
 .el-main {
-  background-color: rgb(236, 244, 250);
+  background-color: rgb(253, 253, 253);
 }
 </style>
