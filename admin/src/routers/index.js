@@ -6,8 +6,10 @@ import UserEdit from '@/views/UserEdit.vue'
 import UserList from '@/views/UserList.vue'
 import PicEdit from '@/views/PicEdit.vue'
 import PicList from '@/views/PicList.vue'
+import Login from '@/views/Login.vue'
 
 const routes= [
+    {path: '/login',name: 'login', component: Login,Login, meta: { isPublic: true }},
     {
         path: '/',
         name: 'main',
@@ -31,6 +33,13 @@ const routes= [
 const router = createRouter({
     history: createWebHistory(),
     routes
+})
+
+router.beforeEach((to, from ,next) => {
+  if (!to.meta.isPublic && !localStorage.token) {
+    return next('/login')
+  }
+  next()
 })
 
 export default router

@@ -6,8 +6,10 @@
                 <el-input v-model="model.name"></el-input>
             </el-form-item>
             <el-form-item label="图片">
-                <el-upload class="avatar-uploader" 
-                :action="$http.defaults.baseURL + '/upload'"  
+                <el-upload 
+                class="avatar-uploader" 
+                :action="uploadUrl"  
+                :headers="getAuthHeaders()"
                 :show-file-list="false" 
                 :on-success="afterUpload" 
                 >
@@ -36,15 +38,6 @@ export default {
         }
     },
 
-    // setup(){
-    //     const imgupload = reactive({
-    //         model
-    //     })
-    //     return {
-    //         imgupload
-    //     }
-    // },
-
     methods: {
         afterUpload(res){
             this.model.pic=res.url
@@ -58,50 +51,13 @@ export default {
                 res = await this.$http.post('rest/pics', this.model)
             }
 
-            this.$router.push('/pics/list')
-            // ElMessageBox
-            //     .then(() => {
-            //         ElMessage({
-            //             type: 'success',
-            //             message: '添加成功',
-            //         })
-            //         this.fetch()
-            //     })
-            //     .catch(() => {
-            //         ElMessage({
-            //             type: 'info',
-            //             message: '取消删除',
-            //         })
-            //     })
-
-            // this.$message({
-            //     type: 'succes',
-            //     mesage: '保存成功'
-            // })
+            this.$router.push('/pics/list')             
         },
 
         async fetch() {
             const res = await this.$http.get(`rest/pics/${this.id}`)
             this.model = res.data
         }
-        // async save() {
-        //     let res
-        //     if (this.id) {
-        //         res = await this.$http.put(`rest/admin_users/${this.id}`, this.model)
-        //     } else {
-        //         res = await this.$http.post('rest/admin_users', this.model)
-        //     }
-        //     this.$router.push('/admin_users/list')
-        //     this.$message({
-        //         type: 'success',
-        //         message: '保存成功'
-        //     })
-        // },
-        // async fetch() {
-        //     const res = await this.$http.get(`rest/admin_users/${this.id}`)
-        //     this.model = res.data
-        // },
-
 
     },
     created() {
