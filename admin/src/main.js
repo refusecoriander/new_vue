@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from '@/routers/index'
+import router from '@/routers/index.js'
 
 //导入element-plus
 import ElementPlus from 'element-plus'

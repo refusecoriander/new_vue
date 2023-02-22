@@ -36,7 +36,7 @@ module.exports = app => {
     })
 
     // 登录校验中间件
-    const authMiddleware = require('../../middleware/auth.js')
+    const authMiddleware = require('../../middleware/userauth.js')
     const resourceMiddleware = require('../../middleware/resource')
     app.use('/web/api/rest/:resource', authMiddleware(), resourceMiddleware(), router)
 
