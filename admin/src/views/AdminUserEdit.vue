@@ -38,50 +38,12 @@ export default {
             }
             
             this.$router.push('/admin_users/list')
-            // ElMessageBox
-            //     .then(() => {
-            //         ElMessage({
-            //             type: 'success',
-            //             message: '添加成功',
-            //         })
-            //         this.fetch()
-            //     })
-            //     .catch(() => {
-            //         ElMessage({
-            //             type: 'info',
-            //             message: '取消删除',
-            //         })
-            //     })
-                
-            // this.$message({
-            //     type: 'succes',
-            //     mesage: '保存成功'
-            // })
         },
 
         async fetch(){
             const res = await this.$http.get(`rest/admin_users/${this.id}`)
             this.model = res.data
         }
-        // async save() {
-        //     let res
-        //     if (this.id) {
-        //         res = await this.$http.put(`rest/admin_users/${this.id}`, this.model)
-        //     } else {
-        //         res = await this.$http.post('rest/admin_users', this.model)
-        //     }
-        //     this.$router.push('/admin_users/list')
-        //     this.$message({
-        //         type: 'success',
-        //         message: '保存成功'
-        //     })
-        // },
-        // async fetch() {
-        //     const res = await this.$http.get(`rest/admin_users/${this.id}`)
-        //     this.model = res.data
-        // },
-
-
     },
     created() {
         this.id && this.fetch()

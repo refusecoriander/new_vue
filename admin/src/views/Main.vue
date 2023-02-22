@@ -25,6 +25,13 @@
             <el-menu-item index="/pics/creat">上传图片</el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
+        <el-sub-menu index="4">
+          <template #title>共享文本</template>
+          <el-menu-item-group>
+            <el-menu-item index="/sharetxts/list">共享历史</el-menu-item>
+            <el-menu-item index="/sharetxts/creat">跟新文本</el-menu-item>
+          </el-menu-item-group>
+        </el-sub-menu>
 
       </el-menu>
       <router-view :key="$route.path"></router-view>

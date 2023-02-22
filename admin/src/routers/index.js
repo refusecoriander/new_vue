@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Login from '@/views/Login.vue'
 import Main from '@/views/Main.vue'
 import AdminUserEdit from '@/views/AdminUserEdit.vue'
 import AdminUserList from '@/views/AdminUserList.vue'
@@ -6,10 +7,12 @@ import UserEdit from '@/views/UserEdit.vue'
 import UserList from '@/views/UserList.vue'
 import PicEdit from '@/views/PicEdit.vue'
 import PicList from '@/views/PicList.vue'
-import Login from '@/views/Login.vue'
+import ShareTextEdit from '@/views/ShareTextEdit.vue'
+import ShareTextList from '@/views/ShareTextList.vue'
+
 
 const routes= [
-    {path: '/login',name: 'login', component: Login,Login, meta: { isPublic: true }},
+    {path: '/login',name: 'login', component: Login, meta: { isPublic: true }},
     {
         path: '/',
         name: 'main',
@@ -26,6 +29,10 @@ const routes= [
             { path: '/pics/creat',  component: PicEdit},
             { path: '/pics/edit/:id', component: PicEdit,props: true},
             { path: '/pics/list',  component: PicList},
+
+            { path: '/sharetxts/creat',  component: ShareTextEdit},
+            { path: '/sharetxts/edit/:id', component: ShareTextEdit,props: true},
+            { path: '/sharetxts/list',  component: ShareTextList},
         ]
     },
 ]

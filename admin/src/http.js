@@ -1,10 +1,11 @@
 import axios from 'axios'
-import Vue from 'vue'
+import { createApp } from 'vue'
+// import Vue from 'vue'
 import router from './routers'
 
 const http = axios.create({
-    // baseURL: process.env.VUE_APP_API_URL || '/admin/api',
-    baseURL: 'http://localhost:3000/admin/api'
+    baseURL: process.env.VUE_APP_API_URL || '/admin/api',
+    // baseURL: 'http://localhost:3000/admin/api'
 })
 
 http.interceptors.request.use(function (config) {
@@ -21,7 +22,7 @@ http.interceptors.request.use(function (config) {
     return res
   }, err => {
     if (err.response.data.message) {
-      Vue.prototype.$message({
+      createApp.prototype.$message({
         type: 'error',
         message: err.response.data.message
       })

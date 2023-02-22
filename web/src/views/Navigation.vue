@@ -23,6 +23,9 @@
             <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick4" plain>二维码生成识别</el-button>
           </el-col>
           <el-col :xs="24" :sm="12" :md="6">
+            <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick6" plain>共享文本</el-button>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="6">
             <el-button class="ToolBt" color="#2597d8" @click="cimsInputClick1" plain>刘明野工具集</el-button>
           </el-col>
         </el-row>
@@ -57,6 +60,9 @@
       },
       cimsInputClick5() {
         this.$router.push({ path: '/hottrends' })
+      },
+      cimsInputClick6() {
+        this.$router.push({ path: '/sharetxts' })
       }
     }
   }
