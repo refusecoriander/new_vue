@@ -29,7 +29,7 @@
           <template #title>共享文本</template>
           <el-menu-item-group>
             <el-menu-item index="/sharetxts/list">共享历史</el-menu-item>
-            <el-menu-item index="/sharetxts/creat">跟新文本</el-menu-item>
+            <el-menu-item index="/sharetxts/creat">发送文本</el-menu-item>
           </el-menu-item-group>
         </el-sub-menu>
 

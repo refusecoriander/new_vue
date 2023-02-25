@@ -1,7 +1,7 @@
 <template>
     <div class="login-container">
       <el-card header="请先登录" class="login-card">
-        <el-form @submit.native.prevent="login">
+        <el-form label-width="80px" label-position="top" @submit.native.prevent="login">
           <el-form-item label="用户名">
             <el-input v-model="model.username"></el-input>
           </el-form-item>
@@ -9,7 +9,7 @@
             <el-input type="password" v-model="model.password"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" native-type="submit">登录</el-button>
+            <el-button style="width:100%;height:40px;margin-top:10px" type="primary" native-type="submit">登录</el-button>
           </el-form-item>
         </el-form>
       </el-card>
@@ -25,7 +25,6 @@
     methods: {
       async login(){
         const res = await this.$http.post('login', this.model)
-        // sessionStorage.token = res.data.token
         localStorage.token = res.data.token
         this.$router.push('/')
         this.$message({

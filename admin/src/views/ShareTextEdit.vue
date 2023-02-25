@@ -1,6 +1,6 @@
 <template>
     <div class="usercreat">
-        <h1>{{id ? '编辑':'新建'}}文本</h1>
+        <h1>{{id ? '编辑':'发送'}}文本</h1>
         <el-form label-width="120px" @submit.native.prevent="save">
 
             <el-form-item label="文本">
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-// import { ElMessage, ElMessageBox } from 'element-plus'
 export default {
     props: {
         id: {}
